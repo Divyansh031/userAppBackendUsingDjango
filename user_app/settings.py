@@ -85,9 +85,17 @@ WSGI_APPLICATION = 'user_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-}
+
+DATABASES = { 
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'userappdb',  # Your local DB name
+        'USER': 'myuser',  # Your PostgreSQL username
+        'PASSWORD': '098div321',  # Your PostgreSQL password
+        'HOST': 'localhost',  # Connect to local PostgreSQL
+        'PORT': '5432',  # Default PostgreSQL port
+    }}
+            
 
 
 # Password validation
